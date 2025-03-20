@@ -1,24 +1,118 @@
-.navbar{
+.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin:  15px 110px;
+    padding: 15px 110px;
+    background-color: #000;
+    color: white;
 }
-.nav-menu{
+
+/* Logo
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+} */
+
+/* Desktop Navigation */
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 60px;
-    font-size: 20px;
+    gap: 40px;
+    font-size: 18px;
 }
-.nav-connect{
-    padding: 20px 40px;
+
+.nav-menu li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-menu li:hover {
+    transform: scale(1.1);
+}
+
+/* Buttons */
+.nav-connect {
+    padding: 12px 24px;
     border-radius: 50px;
-    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1  102.06%);
-    font-size: 22PX;
-    cursor:pointer;
-    transition: 0.5s;
+    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
 }
-.nav-connect:hover{
+
+.nav-connect:hover {
     transform: scale(1.05);
 }
+
+/* Links */
+.anchor-link {
+    text-decoration: none;
+    color: white;
+}
+
+/* Mobile Menu Icon */
+.nav-mob-open {
+    display: none;
+    cursor: pointer;
+}
+
+/* Close Button */
+.nav-mob-close {
+    display: none;
+    cursor: pointer;
+}
+
+/* Responsive Navigation */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 15px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .nav-connect {
+        display: none;
+    }
+
+    /* Mobile Menu Button */
+    .nav-mob-open {
+        display: block;
+    }
+
+    /* Mobile Navigation */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        gap: 30px;
+        background-color: #1f0016;
+        width: 280px;
+        height: 100vh;
+        z-index: 2;
+        transition: right 0.5s ease-in-out;
+    }
+
+    /* Active Class for Open Menu */
+    .nav-menu.active {
+        right: 0;
+    }
+
+    /* Close Button */
+    .nav-mob-close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+    }
+}
+
